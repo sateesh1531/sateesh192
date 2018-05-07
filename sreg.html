@@ -1,0 +1,70 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="sreg.css">
+</head>
+<script type="text/javascript">
+	function validate(){
+	var pwd=document.vform.pwd.value;
+	var rno=document.vform.rno.value;
+	var phone=document.vform.phone.value;
+
+	if (rno.length!=6)
+	{
+		alert("Registration number should be 6 numbers");
+		return false;
+	}
+	else if(isNaN(rno))
+	{
+		alert("registration number should only consist of numbers");
+		return false;
+	}
+	
+	else if(phone.length!=10)
+	{
+		alert("phone number should consist of exactly 10 digits");
+		return false;
+	}
+	else if(isNaN(phone))
+	{
+		alert("phone number should consist only numbers");
+		return false;
+	}
+
+
+
+
+	else if (pwd.length<3)
+		{
+			alert("password should contain atleast 6 characters");
+			return false;
+		}
+	}
+
+
+</script>
+<body>
+	<div class="simple">
+	<font size="5"><b>EMPLOYEE REGISTRATION</b></font>
+	<br>
+	<br>
+		<form class="reg" action="inse.php" method="POST" onsubmit="return validate()" name="vform">
+		Name:<input type="text" name="uname" class="" ="butt" placeholder="Name" required><br><br>
+		
+		
+		Rollno:<input type="text" name="rno" class="butt" placeholder="Roll Number" required><br><br>
+		
+		Phno:<input type="text" name="phone" class="butt" placeholder="Mobile Number" required><br><br>
+		
+		Email:<input type="email" name="email" class="butt" placeholder="Mail Id" required><br><br>
+		
+	Password:<input type="password" name="pwd" class="butt" placeholder="Password" required><br><br>
+		
+		<input type="submit" value="Register" class="button">
+		<input type="reset" class="button">
+		<a href="home.html" class="button">Cancel</a>
+		</form>
+	</div>
+
+</body>
+</html>
